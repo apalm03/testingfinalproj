@@ -30,7 +30,9 @@ $children=filter_input(INPUT_POST,'children');
 $paymentname = filter_input(INPUT_POST,'paymentname');
 $cardnum=filter_input(INPUT_POST,'payment1');
 $cvnum=filter_input(INPUT_POST,'payment2');
-$paymentexp=filter_input(INPUT_POST,'paymentexp');
+$expiry_m=filter_input(INPUT_POST,'expiry-month');
+$expiry_y=filter_input(INPUT_POST,'expiry-year');
+$paymentexp = $expiry_m.'/'.$expiry_y;
 
 
 function dateDiffInDays($date1, $date2)  
@@ -50,7 +52,7 @@ $length = dateDiffInDays($start_date,$end_date);
 
 if (!empty($name) || !empty($email) || !empty($number) || !empty($start_date) ||
 !empty($end_date) || !empty($bookingtype) || !empty($adult) || !empty($children) || !empty($paymentname) ||
-!empty($cardnum) || !empty($cvnum) || !empty($paymentexp)){
+!empty($cardnum) || !empty($cvnum) || !empty($expiry_m) || !empty($expiry_y)){
 
     function getToken($len=32){
         return substr(md5(openssl_random_pseudo_bytes(20)), -$len);

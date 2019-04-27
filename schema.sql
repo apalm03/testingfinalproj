@@ -21,7 +21,7 @@ num_child int(3),
 paymentname varchar(50),
 cardnum varchar(30),
 cvnum varchar(3),
-paymentexp date,
+paymentexp varchar(8),
 token varchar(20),
 confirmation int(1) NOT NULL );
 

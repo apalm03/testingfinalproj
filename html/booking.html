@@ -1,8 +1,11 @@
+<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
     <head>
       <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
     </head>
     <body>
            <header id="banner">Hotel Comingle</header>
@@ -12,10 +15,10 @@
   <a href="../php/availablerooms.php">Rooms and Rates</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
-  <div class=" "><a class="admin" href="../php/index.php">Admin Portal</a></div>
+      <div style="float: right;" ><a class="admin" href="../php/index.php"><div class="glyphicon glyphicon-user"></div> Admin Portal</a></div>
  
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4" style="padding-bottom: 60px;">
     
     <form action="../php/newbooking.php" method="post" name="guestform" onsumbmit="return validateForm()">
         <h1>Booking Details</h1>
@@ -30,7 +33,7 @@
   </div>
   <div class="form-group">
     <label for="number">Telephone</label>
-    <input type="text" class="form-control" name="number" aria-describedby="number"  placeholder="1(876)123-4567" required>
+    <input type="telephone" class="form-control" name="number" aria-describedby="number"  placeholder="1(876)123-4567" required>
   </div>
   <div class="form-group">
     <label for="start_date">Start Date</label>
@@ -69,19 +72,54 @@
   </div>
   <div class="form-group">
     <label for="payment1">Credit Card Number </label>
-    <input type="text" class="form-control" name="payment1" aria-describedby="payment1"  placeholder="1234 5678 9876" required>
+    <input type="text" class="form-control" name="payment1" aria-describedby="payment1"  placeholder="Debit/Credit Card Number" required>
   </div>
   <div class="form-group">
-    <label for="payment">CV  </label>
-    <input type="text" class="form-control" name="payment2" aria-describedby="payment2"  placeholder="876" required>
+    <label for="payment">CVV  </label>
+    <input type="text" class="form-control" name="payment2" aria-describedby="payment2"  placeholder="Security Code" required>
   </div>
-  <div class="form-group">
-    <label for="paymentexp">Expiration Date </label>
-    <input type="text" class="form-control" name="paymentexp" aria-describedby="paymentexp"  placeholder="yyyy-dd-mm" required>
-  </div>
+    <div class="form-group" >
+      <label class="col-sm-4 control-label" for="expiry-month">Expiration Date</label>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-md-6">
+            <select class="form-control col-sm-11" name="expiry-month" id="expiry-month">
+              <option>Month</option>
+              <option value="01">Jan (01)</option>
+              <option value="02">Feb (02)</option>
+              <option value="03">Mar (03)</option>
+              <option value="04">Apr (04)</option>
+              <option value="05">May (05)</option>
+              <option value="06">June (06)</option>
+              <option value="07">July (07)</option>
+              <option value="08">Aug (08)</option>
+              <option value="09">Sep (09)</option>
+              <option value="10">Oct (10)</option>
+              <option value="11">Nov (11)</option>
+              <option value="12">Dec (12)</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <select class="form-control" name="expiry-year">
+              <option value="13">2013</option>
+              <option value="14">2014</option>
+              <option value="15">2015</option>
+              <option value="16">2016</option>
+              <option value="17">2017</option>
+              <option value="18">2018</option>
+              <option value="19">2019</option>
+              <option value="20">2020</option>
+              <option value="21">2021</option>
+              <option value="22">2022</option>
+              <option value="23">2023</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
       
   </div>
-  
+  <br>
   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
 </div>

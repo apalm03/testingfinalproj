@@ -12,17 +12,13 @@
     
         <header id="banner">Hotel Comingle</header>
      
+
         
-        
-    <?php if ( isset($_GET['login']) && $_GET['login'] == failed )
-        {
-         // treat the succes case ex:
-         $result='<div class="alert alert-danger alert  col-sm-4  " style="margin-top: 20px; margin-left:10px" ><a href="#" class="close" data-dismiss="alert">&times;</a>Incorrect Username or Password</div>';
-         echo $result;
-        }
+    <?php
+    require_once ("login.php");
     ?> 
     
-        <div  class="col-sm-4">    
+        <div  class="col-sm-4" style="width: 50%;margin: 0 auto;">
         <form id="form" action="../php/login.php" method="post" onsubmit= "return validateUser()" class="needs-validation" novalidate>
             <h1 id="heading">User Login</h1>
             <div class="form-group">
@@ -41,8 +37,18 @@
                 <button name="login" type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
-        
-    </div>
+
+            <?php
+
+            if ( isset($_GET['login']) && $_GET['login'] == "failed" )
+            {
+                // treat the succes case ex:
+                $result='<div class="alert alert-danger alert  col-sm-8  " style="margin-top: 20px; margin-left:10px" ><a href="#" class="close" data-dismiss="alert">&times;</a>Incorrect Username or Password</div>';
+                echo $result;
+            }
+            ?>
+
+        </div>
     <script>
         var form = document.querySelector('.needs-validation');
 form.addEventListener('submit',function(event){

@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script src="/js/script.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		</head>
@@ -18,7 +19,7 @@
   <a class="active" href="../php/availablerooms.php">Rooms and Rates</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
-  <div class=" "><a class="admin" href="../php/index.php">Admin Portal</a></div>
+  <div style="float: right;" ><a class="admin" href="../php/index.php"><div class="glyphicon glyphicon-user"></div> Admin Portal</a></div>
  
 </div>
 

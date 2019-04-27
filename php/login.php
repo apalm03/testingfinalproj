@@ -13,10 +13,12 @@ require_once('connectdb.php'); #'inclusion' of php file to connect database for 
         if(empty($_POST["username"]) || empty($_POST["password"]))
         {
           echo "All fields are required";
+          unset($_POST["username"]);
+          unset($_POST["username"]);
         }
         else
-        { 
-            $sql = "SELECT * FROM users WHERE username ='$uname'and password='$pword'"; 
+        {
+            $sql = "SELECT * FROM users WHERE username ='$uname'and password='$pword'";
             $result = mysqli_query($conn,$sql);
             $num= mysqli_num_rows($result);
             if($num == 1){
@@ -26,7 +28,7 @@ require_once('connectdb.php'); #'inclusion' of php file to connect database for 
                 header("location: index.php?login=failed");
                 throw new Exception("Incorrect Username or Password");
             }
-            
+
         }
 }
 }catch(Exception $e) {
