@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 
 <head>
+
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="/js/script.js" type="text/javascript"></script>
@@ -134,7 +135,7 @@ if (!empty($name) || !empty($email) || !empty($number) || !empty($start_date) ||
       
     
 }else {
-    echo "All fields are required";
+    echo "Database Error";
     die();
 }
 
@@ -142,6 +143,9 @@ if (!empty($name) || !empty($email) || !empty($number) || !empty($start_date) ||
 
 
 
+}else{
+    header("location:../html/booking.html");
+    "<script>alert('fill all fields')</script>";
 }
 
 

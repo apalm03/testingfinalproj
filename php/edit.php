@@ -7,7 +7,7 @@ $row=mysqli_fetch_array($query);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Booking Info</title>
+    <title>Booking Info Edit</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>

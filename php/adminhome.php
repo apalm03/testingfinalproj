@@ -1,7 +1,7 @@
 <html>
     <meta charset="utf-8">
     <head>
-        <title>Hotel Testing</title>
+        <title>Admin Page</title>
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script src="../js/script.js" type="text/javascript"></script>
@@ -16,7 +16,7 @@
 
     </head>
     
-        <header id="banner">Hotel Comingle</header>
+        <header id="banner">Hotel Suarez</header>
     <div>
 
         <div class= "col-sm-2" id="sidebar">

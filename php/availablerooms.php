@@ -3,6 +3,7 @@
 	<meta charset="utf-8">
 
     <head>
+        <title>Rooms Available</title>
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script src="/js/script.js" type="text/javascript"></script>
@@ -12,7 +13,7 @@
 		</head>
 
 	<body>
- <header id="banner">Hotel Comingle</header>
+ <header id="banner">Hotel Suarez</header>
     <div class="topnav">
   <a href="../html/homepage.html">Home</a>
   <a href="../html/booking.html">Book Room</a>

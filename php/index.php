@@ -1,7 +1,7 @@
 <html>
     <meta charset="utf-8">
     <head>
-        <title>Hotel Testing</title>
+        <title>Hotel Suarez-Login</title>
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script src="/js/script.js" type="text/javascript"></script>
@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     
-        <header id="banner">Hotel Comingle</header>
+        <header id="banner">Hotel Suarez</header>
      
 
         

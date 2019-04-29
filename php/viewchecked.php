@@ -1,14 +1,14 @@
 <html>
     <meta charset="utf-8">
     <head>
-        <title>Hotel Testing</title>
+        <title>Hotel Suarez-Guest List</title>
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script src="../js/script.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     
-        <header id="banner">Hotel Comingle</header>
+        <header id="banner">Hotel Suarez</header>
 
     
     <?php

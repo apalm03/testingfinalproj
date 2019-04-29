@@ -2,13 +2,26 @@
 <html>
     <meta charset="utf-8">
     <head>
+        <title>Book Room</title>
       <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+     <script src="code.jquery.com/jquery-1.11.2.min.js"></script>
 
+      <script src="dist/jquery.payform.js"></script>
+
+      <script type="text/javascript" src="../js/script.js"></script>
 
     </head>
     <body>
-           <header id="banner">Hotel Comingle</header>
+           <header id="banner">Hotel Suarez</header>
     <div class="topnav">
   <a  href="../html/homepage.html">Home</a>
   <a class="active" href="../html/booking.html">Book Room</a>
@@ -20,31 +33,34 @@
 </div>
 <div class="col-sm-4" style="padding-bottom: 60px;">
     
-    <form action="../php/newbooking.php" method="post" name="guestform" onsumbmit="return validateForm()">
+    <form role="form" action="../php/newbooking.php" method="post" name="guestform" onsumbmit="return validateForm()" id="bookingform">
         <h1>Booking Details</h1>
     <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter your full name" required>
+    <label for="name" class="control-label">Full Name</label>
+    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter your full name" id="name" required pattern="^[A-Za-z]+$">
   </div>
   <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" name='email' aria-describedby="email" placeholder="example: johndoe@gmail.com" required>
-    
+    <label for="email" class="control-label">Email address</label>
+    <input type="email" class="form-control" id="email" name='email' aria-describedby="email" placeholder="example: johndoe@gmail.com"  required>
+
   </div>
   <div class="form-group">
-    <label for="number">Telephone</label>
-    <input type="telephone" class="form-control" name="number" aria-describedby="number"  placeholder="1(876)123-4567" required>
+    <label for="number" class="control-label">Telephone</label>
+    <input type="text" class="form-control" name="number" aria-describedby="number"  placeholder="1(876)123-4567" id="phone" pattern="^\d{4}-\d{3}-\d{4}$" required title= "Follow this pattern: ^\d{4}-\d{3}-\d{4}$" />
   </div>
   <div class="form-group">
-    <label for="start_date">Start Date</label>
-    <input type="text" class="form-control" name='startduration' aria-describedby="start_date"  placeholder="yyyy-dd-mm" required>
+    <label for="start_date" class="control-label">Start Date</label>
+    <input type="date" class="form-control" name='startduration' aria-describedby="start_date"  id="start_date" required>
   </div>
   <div class="form-group">
-    <label for="end_date">End Date</label>
-    <input type="text" class="form-control" name='endduration' aria-describedby="end_date"  placeholder="yyyy-dd-mm" required>
+    <label for="end_date" class="control-label">End Date</label>
+    <input type="date" class="form-control" name='endduration' aria-describedby="end_date" id="end_date"  required>
   </div>
+
+
+
   <div class="form-group">
-    <label for="booking_type">Booking Types</label>
+    <label for="booking_type" class="control-label">Booking Types</label>
     <select name='booking_type' id='booking_type' class="form-control" required>
     <option value="" disabled selected>Choose your booking type</option>
       <option>Penthouse</option>
@@ -55,13 +71,13 @@
   </div>
   
   <div class="form-group">
-    <label for="num_adults">No.Adults</label>
-    <input type="text" class="form-control" name="adults" aria-describedby="adults"  placeholder="Enter how many" required>
+    <label for="num_adults" class="form-label">No.Adults</label>
+    <input type="number" class="form-control" name="adults" aria-describedby="adults"  placeholder="Enter how many" id="adults" required>
   </div>
   
   <div class="form-group">
-    <label for="children">No.Children </label>
-    <input type="text" class="form-control" name="children" aria-describedby="children"  placeholder="Enter how many" required>
+    <label for="children" class="control-label">No.Children </label>
+    <input type="number" class="form-control" name="children" aria-describedby="children"  placeholder="Enter how many" id="children" required>
   </div>
   
   <div>
@@ -72,18 +88,18 @@
   </div>
   <div class="form-group">
     <label for="payment1">Credit Card Number </label>
-    <input type="text" class="form-control" name="payment1" aria-describedby="payment1"  placeholder="Debit/Credit Card Number" required>
+    <input type="text" class="form-control" name="payment1" aria-describedby="payment1"  placeholder="Debit/Credit Card Number" id="payment1" pattern="[0-9]{16}" required title="Enter 16 digits from 0 to 9">
   </div>
   <div class="form-group">
     <label for="payment">CVV  </label>
-    <input type="text" class="form-control" name="payment2" aria-describedby="payment2"  placeholder="Security Code" required>
+    <input type="number" class="form-control" name="payment2" aria-describedby="payment2"  placeholder="Security Code" id="cvv_num" required>
   </div>
     <div class="form-group" >
       <label class="col-sm-4 control-label" for="expiry-month">Expiration Date</label>
       <div class="col-sm-9">
         <div class="row">
           <div class="col-md-6">
-            <select class="form-control col-sm-11" name="expiry-month" id="expiry-month">
+            <select class="form-control col-sm-11" name="expiry-month" id="expiry-month" required>
               <option>Month</option>
               <option value="01">Jan (01)</option>
               <option value="02">Feb (02)</option>
@@ -100,7 +116,7 @@
             </select>
           </div>
           <div class="col-md-5">
-            <select class="form-control" name="expiry-year">
+            <select class="form-control" name="expiry-year" >
               <option value="13">2013</option>
               <option value="14">2014</option>
               <option value="15">2015</option>
@@ -123,5 +139,31 @@
   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
 </div>
+    <script type="text/javascript">
+
+
+        bootstrapValidate(
+            '#email',
+            'email:Enter a valid E-Mail Address!'
+        );
+
+        bootstrapValidate(
+            ['#name','#phone','#start_date','#end_date','#children','#adults','#booking_type','#payment1'],
+            'required: Please fill out field'
+        );
+
+        bootstrapValidate(
+            '#cvv_num', 'min:3:must be 3 digits |max:3:must be 3 digits'
+        );
+
+        bootstrapValidate('#name', 'alpha:You can only input alphabetic characters');
+
+
+
+
+
+    </script>
+
+
     </body>
 </html>
